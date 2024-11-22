@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Webpage</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Recipe World</h1>
+        <p>Click on a button to view a recipe!</p>
+    </header>
+    <main>
+        <section>
+            <button onclick="showRecipe('cake')">Recipe for Cake</button>
+            <button onclick="showRecipe('cookie')">Recipe for Cookie</button>
+        </section>
+
+        <section id="recipe-section" style="margin-top: 20px;">
+            <h2>Recipe Details</h2>
+            <div id="recipe-content">
+                <p>Select a recipe to see the details.</p>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        function showRecipe(type) {
+            const recipeContent = document.getElementById('recipe-content');
+            if (type === 'cake') {
+                recipeContent.innerHTML = `
+                    <h3>Cake Recipe</h3>
+                    <img src="cake.jpg" alt="Description" style="max-width: 70%; height: auto;">
+                    <h4>Ingredients:</h4>
+
+                    <ul>
+                        <li>2 cups all-purpose flour</li>
+                        <li>1 1/2 cups sugar</li>
+                        <li>1/2 cup butter</li>
+                        <li>1 cup milk</li>
+                        <li>2 eggs</li>
+                        <li>1 teaspoon vanilla extract</li>
+                        <li>1 tablespoon baking powder</li>
+                        <li>1/4 teaspoon salt</li>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <ol>
+                        <li>Preheat the oven to 350°F (175°C).</li>
+                        <li>Cream together the butter and sugar until fluffy.</li>
+                        <li>Mix in the eggs and vanilla extract.</li>
+                        <li>In a separate bowl, combine the flour, baking powder, and salt.</li>
+                        <li>Gradually add the dry ingredients to the wet ingredients, alternating with milk.</li>
+                        <li>Pour the batter into a greased baking pan and bake for 30-35 minutes or until a toothpick comes out clean.</li>
+                        <li>Let cool, then serve.</li>
+                    </ol>
+                `;
+            } else if (type === 'cookie') {
+                recipeContent.innerHTML = `
+                    <h3>Cookie Recipe</h3>
+                    <img src="Cookie.jpg" alt="Description" style="max-width: 70%; height: auto;">
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <li>1 cup butter</li>
+                        <li>1 cup sugar</li>
+                        <li>1 cup brown sugar</li>
+                        <li>2 eggs</li>
+                        <li>1 teaspoon vanilla extract</li>
+                        <li>3 cups all-purpose flour</li>
+                        <li>1 teaspoon baking soda</li>
+                        <li>1/2 teaspoon salt</li>
+                        <li>2 cups chocolate chips</li>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <ol>
+                        <li>Preheat the oven to 375°F (190°C).</li>
+                        <li>Cream together the butter, sugar, and brown sugar until smooth.</li>
+                        <li>Beat in the eggs one at a time, then add vanilla extract.</li>
+                        <li>In a separate bowl, mix the flour, baking soda, and salt.</li>
+                        <li>Gradually add the dry mixture to the wet ingredients.</li>
+                        <li>Stir in the chocolate chips.</li>
+                        <li>Drop spoonfuls of dough onto a baking sheet and bake for 8-10 minutes or until golden brown.</li>
+                        <li>Let cool, then enjoy.</li>
+                    </ol>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
